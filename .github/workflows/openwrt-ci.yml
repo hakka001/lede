@@ -54,11 +54,7 @@ jobs:
           ./scripts/feeds install -a
 
       - name: Generate configuration file
-        # run: make defconfig
-        run: |
-          rm -f ./.config*
-          touch ./.config
-          
+        run: make defconfig
           # 编译cm520-79f固件:
           cat >> .config <<EOF
           CONFIG_TARGET_IMAGES_GZIP=y
